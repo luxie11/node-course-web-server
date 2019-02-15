@@ -7,7 +7,7 @@ var app = express();
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
-
+const port = process.env.port || 3000;
 
 //Basic Middleware
 app.use((req,res,next)=>{
@@ -61,6 +61,8 @@ app.get('/bad',(request,response)=>{
     })
 });
 
-app.listen(3000, ()=>{
-    console.log('Server is up to run on port 3000');
+
+
+app.listen(port, ()=>{
+    console.log(`Server is up to run on port ${port}`);
 });
