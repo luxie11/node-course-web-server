@@ -2,10 +2,9 @@ const request = require('request');
 
 const geocodeAddress = (address, callback) =>{
     var encodedValue = encodeURIComponent(address);
-    //Reikia, kad vartotojas ivestu Geguziu 73 Siauliai
+    var key = 'ENTER_KEY';
     request({
-        //url:`https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyC0QDOUhUD9E3mvqy8pfc5VZrFpZ6fx7r4&address=siauliai`,
-        url:`https://api.opencagedata.com/geocode/v1/json?q=${encodedValue}&key=dc13928a8c7b4c6b9a0998ee857cbdef`,
+        url:`https://api.opencagedata.com/geocode/v1/json?q=${encodedValue}&key=${key}`,
         json: true
     },(error, response, body)=>{
         if(error){
